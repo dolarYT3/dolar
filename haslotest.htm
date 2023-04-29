@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<center>
+    <meta charset="UTF-8">
+    <title>Podaj hasło</title>
+</head>
+<body>
+    Podaj hasło<br>
+    <input type="password" id="passwordInput">
+    <input type="button" id="passwordButton" onClick="checkPassword();" value="Enter">
+    <div id="passwordMessage"></div>
+
+    <script type="text/javascript">
+    document.getElementById("passwordInput").addEventListener("keydown", function(event){
+        if(event.keyCode === 13 && document.getElementById("passwordInput").value!="") {
+            checkPassword();
+        }
+    });
+
+    function checkPassword() {
+        if(document.getElementById("passwordInput").value=="pliki"){
+            window.location="pliki.htm";
+        }else{
+            document.getElementById("passwordMessage").innerHTML="Złe hasło";
+            document.getElementById("passwordInput").value="youtube.com";
+        }
+    }
+    </script>
+</center>    
+</body>
+</html>
